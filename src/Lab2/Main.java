@@ -48,11 +48,25 @@ public class Main {
         System.out.println("\nContinut lista studenti:");
         for (Student s : listaStudenti) System.out.println(s);
 
+        System.out.println();
+
+        Set<Student> setStudenti = new HashSet();
+        System.out.println("Studenti in set:");
+        for(Student s: setStudenti){
+            System.out.println(s);
+        }
+
         Student cautat1 = new Student("120", "Popa", "Maria", "TI 21/1");
         Student cautat2 = new Student("112", "Popa", "Alis", "TI 21/2");
 
         System.out.println("Este Popa Maria in lista? " + verificaPrezenta(listaStudenti, cautat1));
         System.out.println("Este Popa Alis in lista? " + verificaPrezenta(listaStudenti, cautat2));
+
+        boolean gasit1 = setStudenti.add(cautat1);
+        boolean gasit2 = setStudenti.add(cautat2);
+
+        System.out.println("Popa Maria este prezenta?" + gasit1);
+        System.out.println("Mariciuc Ioana este prezenta? " + gasit2);
     }
 
     public static boolean verificaPrezenta(List<Student> lista, Student deCautat) {
@@ -63,4 +77,6 @@ public class Main {
         }
         return false;
     }
+
+
 }
