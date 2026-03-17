@@ -1,3 +1,4 @@
+package Lab2;
 public class Student {
     private
     String numarMatricol;
