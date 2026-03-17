@@ -20,4 +20,9 @@ public class Student {
                 "prenume=" +" "+ prenume + ", " +
                 "formatie de studiu=" +" "+ formatieDeStudiu;
     }
+
+    public boolean esteAcelasiStudent(Student altul){
+        return this.nume.equals(altul.nume) && this.prenume.equals(altul.prenume) && this.formatieDeStudiu.equals(altul.formatieDeStudiu);
+    }
+
 }
