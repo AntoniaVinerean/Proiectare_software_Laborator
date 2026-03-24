@@ -76,6 +76,7 @@ public class Main {
 
         String fileIn = "Studenti_in.txt";
         String fileOut = "Studenti_out.txt";
+        String fileOutSorted = "Studenti_out_sorted.txt";
         List<Student> listadinFisier=new ArrayList<>();
 
         try{
@@ -100,6 +101,16 @@ public class Main {
                 }
             }
             System.out.println("Sortare finalizata" +" "+ fileOut);
+
+            listadinFisier.sort(Comparator.comparing(Student :: getFormatieDeStudiu).thenComparing(Student :: getNume));
+
+            try(BufferedWriter writer = Files.newBufferedWriter(Paths.get(fileOutSorted))){
+                for(Student s: listadinFisier){
+                    writer.write(s.Afisare());
+                    writer.newLine();
+                }
+            }
+            System.out.println("Sortare finalizata" +" "+ fileOutSorted);
         }catch (IOException e){
             System.out.println("Eroare");
         }

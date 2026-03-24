@@ -47,4 +47,7 @@ public class Student {
         return numarMatricol + "," + nume + "," + prenume + "," + formatieDeStudiu;
     }
 
+    public String getFormatieDeStudiu() {
+        return formatieDeStudiu;
+    }
 }
