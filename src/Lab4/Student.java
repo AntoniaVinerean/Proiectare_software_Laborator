@@ -54,4 +54,5 @@ public class Student {
     public void setNota(double nota) {
         this.nota = nota;
     }
+
 }

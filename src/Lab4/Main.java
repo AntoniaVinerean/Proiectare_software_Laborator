@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<String,Integer> varste = new HashMap<>();
+        HashMap<String, Integer> varste = new HashMap<>();
         varste.put("Ioan", 21);
         varste.put("Maria", 22);
         varste.put("Victor", 20);
@@ -17,7 +17,8 @@ public class Main {
         varste.put("Mihai", 21);
         varste.put("Daniela", 23);
 
-        Map<String, String> adrese = Map.of("Ioan", "Sibiu",
+        Map<String, String> adrese = Map.of(
+                "Ioan", "Sibiu",
                 "Maria", "Bucuresti",
                 "Victor", "Cluj",
                 "Simina", "Alba-Iulia",
@@ -26,7 +27,7 @@ public class Main {
                 "Daniela", "Sibiu"
         );
 
-        System.out.println("Continut initial varste: "+ varste);
+        System.out.println("Continut initial varste: " + varste);
         System.out.println();
         varste.put("Vlad", 19);
         varste.put("Iulia", 19);
@@ -34,17 +35,17 @@ public class Main {
         System.out.println();
 
         HashMap<String, Tanar> tineri = new HashMap<>();
-        for (String nume: varste.keySet()){
+        for (String nume : varste.keySet()) {
             int varsta = varste.get(nume);
             String adresa = adrese.get(nume);
 
-            Tanar tanarNou = new Tanar(nume, varsta, adresa);
+            Tanar tanarNou = new Tanar(nume, varsta, adresa, 0.0f);
             tineri.put(nume, tanarNou);
         }
 
         System.out.println("Continutul instantei tineri:");
-        for(String cheie: tineri.keySet()){
-            System.out.println("Cheie: "+ " "+cheie+ " "+ "Valoare:"+ " "+ tineri.get(cheie));
+        for (String cheie : tineri.keySet()) {
+            System.out.println("Cheie: " + " " + cheie + " " + "Valoare:" + " " + tineri.get(cheie));
         }
 
         HashMap<String, Student> dictionarStudenti = new HashMap<>();
@@ -58,7 +59,7 @@ public class Main {
                 dictionarStudenti.put(parti[0], s);
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Eroare: Nu s-a gasit fisierul studenti.txt");
+            System.out.println("Eroare: Nu s-a gasit fisierul studenti_in.txt");
         }
 
         try (Scanner scannerNote = new Scanner(new File("note_anom.txt"))) {
