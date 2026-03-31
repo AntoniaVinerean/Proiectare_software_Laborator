@@ -2,6 +2,9 @@ package Lab4;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,5 +47,40 @@ public class Main {
             System.out.println("Cheie: "+ " "+cheie+ " "+ "Valoare:"+ " "+ tineri.get(cheie));
         }
 
+        HashMap<String, Student> dictionarStudenti = new HashMap<>();
+        try (Scanner scannerStudenti = new Scanner(new File("studenti_in.txt"))) {
+            while (scannerStudenti.hasNextLine()) {
+                String linie = scannerStudenti.nextLine();
+                if (linie.isEmpty()) continue;
+
+                String[] parti = linie.split(",");
+                Student s = new Student(parti[0], parti[1], parti[2], parti[3]);
+                dictionarStudenti.put(parti[0], s);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Eroare: Nu s-a gasit fisierul studenti.txt");
+        }
+
+        try (Scanner scannerNote = new Scanner(new File("note_anom.txt"))) {
+            while (scannerNote.hasNextLine()) {
+                String linie = scannerNote.nextLine();
+                if (linie.isEmpty()) continue;
+
+                String[] parti = linie.split(",");
+                String matricol = parti[0];
+                double valoareNota = Double.parseDouble(parti[1]);
+                if (dictionarStudenti.containsKey(matricol)) {
+                    dictionarStudenti.get(matricol).setNota(valoareNota);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Eroare: Nu s-a gasit fisierul note_anom.txt");
+        }
+
+        System.out.println();
+        System.out.println("Situatie Studenti");
+        for (Student s : dictionarStudenti.values()) {
+            System.out.println(s);
+        }
     }
 }
