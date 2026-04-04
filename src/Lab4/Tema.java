@@ -1,6 +1,7 @@
 package Lab4;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -26,9 +27,11 @@ public class Tema {
         }
         System.out.println("\n");
 
-        HashMap<String, Tanar> tineri = new HashMap<>();
+        Map<String, Tanar> tineri = new HashMap<>();
         tineri.put("Bianca", new Tanar("Bianca Popescu", 20, "Sibiu", 9.10f));
         tineri.put("Ioan", new Tanar("Ioan Ionescu", 21, "Cluj", 7.50f));
+        tineri.put("Bianca", new Tanar("Bianca Popescu", 20, "Sibiu", 10.0f));
+        tineri.put("Bianca2", new Tanar("Bianca Popescu", 20, "Sibiu", 4.0f));
 
         float notaM = gasesteNota("Bianca", "Popescu", tineri);
         float notaN = gasesteNota("Ioan", "Popa", tineri);
@@ -38,8 +41,8 @@ public class Tema {
         scanner.close();
     }
 
-    public static float gasesteNota(String prenume, String nume, HashMap<String, Tanar> tineri) {
-        HashMap<String, Float> hartaCautare = new HashMap<>();
+    public static float gasesteNota(String prenume, String nume, Map<String, Tanar> tineri) {
+        Map<String, Float> hartaCautare = new HashMap<>();
         for (Tanar t : tineri.values()) {
             hartaCautare.put(t.getName(), t.getNota());
         }
