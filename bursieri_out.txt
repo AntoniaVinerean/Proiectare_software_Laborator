@@ -1,0 +1,4 @@
+Matricol: 1025 | Nume: Andrei Popa     | Grupa: ISM141/2 | Nota: 8,70 | Bursă: 725,50
+Matricol: 1024 | Nume: Ioan Mihalcea   | Grupa: ISM141/1 | Nota: 9,80 | Bursă: 801,10
+Matricol: 1026 | Nume: Anamaria Prodan | Grupa: TI131/1  | Nota: 8,90 | Bursă: 745,50
+Matricol: 1029 | Nume: Bianca Popescu  | Grupa: TI131/1  | Nota: 9,10 | Bursă: 780,80
