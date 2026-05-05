@@ -1,4 +1,4 @@
-package lab7.tema;
+package Lab7.java.lab7.tema;
 
 public class StudentiBursieri extends Student {
     private final double cuantumBursa; // Camp final pentru imutabilitate

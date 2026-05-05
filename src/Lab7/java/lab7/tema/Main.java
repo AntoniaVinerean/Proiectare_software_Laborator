@@ -1,4 +1,4 @@
-package lab7.tema;
+package Lab7.java.lab7.tema;
 
 import java.util.*;
 
