@@ -6,6 +6,7 @@ import static java.util.Locale.filter;
 
 public class AppLab9 {
     public static void main(String[] args) {
+        //problema 9.3.1
         List<Integer> numere = new Random()
                 .ints(10, 5, 26)
                 .boxed()
@@ -35,7 +36,28 @@ public class AppLab9 {
         boolean gasit12 = numere.stream()
                 .anyMatch(n -> n == 12);
         System.out.println("Se gaseste valoarea 12 in lista? " + (gasit12 ? "Da" : "Nu"));
+        System.out.println(" ");
 
+        //problema 9.3.2
+        String text = "Acesta este un program scris in java pentru expresii lambda";
+        List <String> cuvinte = Arrays.asList(text.split(" "));
+        System.out.println("Lista initiala este: " + cuvinte);
+
+        List <String> cuvinteLungi = cuvinte.stream()
+                .filter(n -> n.length() >= 5)
+                .collect(Collectors.toList());
+        System.out.println("Cuvinte cu lungime >= 5: " + cuvinteLungi);
+        System.out.println("Număr de cuvinte găsite >= 5: " + cuvinteLungi.size());
+
+        List <String> cuvinteSortate = cuvinteLungi.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        System.out.println("Cuvinte sortate alfabetic: " + cuvinteSortate);
+
+        cuvinte.stream()
+                .filter(c-> c.startsWith("p"))
+                .findFirst()
+                .ifPresent(c->System.out.println("Element care incepe cu litera p: "+c));
 
     }
 }
