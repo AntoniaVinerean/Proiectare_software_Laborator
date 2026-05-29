@@ -17,12 +17,12 @@ public class Restaurant {
         return restaurant;
     }
 
-    public void washHands() {
+    public synchronized void washHands() {
         for(int i = 0; i < 1000; i++) {
             this.usedWater++;
         }
     }
-    public void washDishes() {
+    public synchronized void washDishes() {
         for(int i = 0; i < 1000; i++) {
                 this.usedWater++;
         }
